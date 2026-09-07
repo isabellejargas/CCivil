@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Direito Civil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>⚖️ Quiz de Direito Civil</h1>
+            <p class="subtitulo">Uma revisão para estudantes e concurseiros</p>
+        </header>
+
+        <div class="progresso">
+            <span id="pergunta-atual">1</span> de <span id="total-perguntas">{{ total }}</span>
+        </div>
+
+        <div class="card" id="card-quiz">
+            <p class="pergunta" id="texto-pergunta">Carregando pergunta...</p>
+
+            <form id="form-resposta">
+                <input
+                    type="text"
+                    id="campo-resposta"
+                    placeholder="Digite sua resposta aqui..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit">Responder</button>
+            </form>
+
+            <p class="feedback" id="feedback"></p>
+        </div>
+
+        <div class="card" id="card-fim" style="display: none;">
+            <p class="fim-titulo">🎉 Quiz finalizado!</p>
+            <p>Você revisou os 10 primeiros artigos do Código Civil.</p>
+            <button id="btn-reiniciar">Fazer novamente</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
